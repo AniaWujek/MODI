@@ -1,6 +1,6 @@
 close all;
 
-global alfa1 beta Umin alfa2 g us skok poprz_h
+global alfa1 beta Umin alfa2 g us skok poprz_h h_stab t_stab
 
 %init
 %parametry niezmienne
@@ -21,18 +21,18 @@ y_dodane = [0.5116 0.6066];
 
 %parametry zmienne
 us = 1.8;
-H_HIST = [0 0 0]; % [t h1 h2]
-Y_HIST = [0 0 0]; %[t y1 y2]
+% H_HIST = [0 0 0]; % [t h1 h2]
+% Y_HIST = [0 0 0]; %[t y1 y2]
 skok = 0;
-punkt_pracy = 0;
+% punkt_pracy = 0;
 %end init
 
-h_stab_przed = [0 0]; %ustabilizowany h przed skokiem
-t_stab_przed = 0;
-y_stab_przed = 0;
-h_stab = [0 0]; %ustabilizowany h po skoku jednostkowym
-t_stab = 0;
-y_stab = 0;
+% h_stab_przed = [0 0]; %ustabilizowany h przed skokiem
+% t_stab_przed = 0;
+% y_stab_przed = 0;
+% h_stab = [0 0]; %ustabilizowany h po skoku jednostkowym
+% t_stab = 0;
+% y_stab = 0;
 poprz_h = [0 0];
 
 
@@ -54,7 +54,9 @@ liczba_chwil = 10000;
 %         y_stab = Y_HIST(t+1,:);
 %     end
 % end
-[T H] = ode45(@obiektReg,[0 10000],[0 0]);
+OPTIONS = odeset('MaxStep',50);
+[T H] = ode45(@obiektReg,[0 liczba_chwil],[0 0],OPTIONS);
+h_stab / 4
 
 % KH = (h_stab - h_stab_przed) / (1);
 % disp('wzmocnienie H:');
