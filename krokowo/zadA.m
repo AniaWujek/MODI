@@ -1,4 +1,4 @@
-close all;
+% close all;
 
 global alfa1 beta Umin alfa2 g
 
@@ -220,7 +220,7 @@ y_lin = KY(1)*(1)*(1-exp(1).^(-(t_lin-t_stab_przed)/TH1))+y_stab_przed(1);
 plot(t_lin,y_lin,'m');
 %
 grid on;
-title('Y1, us = 4');
+title(['krokowo Y1, us = 4, T=' num2str(TH1) ', K=' num2str(KY(1))]);
 
 subplot(2,1,2)
 plot(Y_HIST(:,2));
@@ -230,4 +230,4 @@ y_lin = KY(2)*(1)*(1-exp(1).^(-(t_lin-t_stab_przed)/TH2))+y_stab_przed(2);
 plot(t_lin,y_lin,'m');
 %
 grid on;
-title('Y2, us = 4');
+title(['krokowo Y2, us = 4, T=' num2str(TH2) ', K=' num2str(KY(2))]);
