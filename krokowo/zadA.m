@@ -79,6 +79,21 @@ end
 TH1
 TH2
 
+tau1 = 0;
+tau2 = 0;
+for i = t_stab_przed:t_stab
+    if abs(Y_HIST(i,1)-Y_HIST(t_stab_przed-1,1)) > 0.0001
+       tau1 = i -  t_stab_przed;
+       break;
+    end
+end
+for i = t_stab_przed:t_stab
+    if abs(Y_HIST(i,2)-Y_HIST(t_stab_przed-1,2)) > 0.0001
+       tau2 = i -  t_stab_przed;
+       break;
+    end
+end
+
 figure;
 subplot(2,1,1);
 plot(H_HIST(:,1));
@@ -112,7 +127,7 @@ y_lin = KY(1)*(1)*(1-exp(1).^(-(t_lin-t_stab_przed)/TH1))+y_stab_przed(1);
 plot(t_lin,y_lin,'m');
 %
 grid on;
-title('Y1, us = 1.8');
+title(['krokowo Y1, us = 1.8, T=' num2str(TH1) ', K=' num2str(KY(1)) ', tau=' num2str(tau1)]);
 
 subplot(2,1,2)
 plot(Y_HIST(:,2));
@@ -122,7 +137,7 @@ y_lin = KY(2)*(1)*(1-exp(1).^(-(t_lin-t_stab_przed)/TH2))+y_stab_przed(2);
 plot(t_lin,y_lin,'m');
 %
 grid on;
-title('Y2, us = 1.8');
+title(['krokowo Y2, us = 1.8, T=' num2str(TH2) ', K=' num2str(KY(2)) ', tau=' num2str(tau2)]);
 
 % ************************************* %
 %                 us = 4                %
@@ -187,6 +202,21 @@ end
 TH1
 TH2
 
+tau1 = 0;
+tau2 = 0;
+for i = t_stab_przed:t_stab
+    if abs(Y_HIST(i,1)-Y_HIST(t_stab_przed-1,1)) > 0.0001
+       tau1 = i -  t_stab_przed;
+       break;
+    end
+end
+for i = t_stab_przed:t_stab
+    if abs(Y_HIST(i,2)-Y_HIST(t_stab_przed-1,2)) > 0.0001
+       tau2 = i -  t_stab_przed;
+       break;
+    end
+end
+
 figure;
 subplot(2,1,1);
 plot(H_HIST(:,1));
@@ -220,7 +250,7 @@ y_lin = KY(1)*(1)*(1-exp(1).^(-(t_lin-t_stab_przed)/TH1))+y_stab_przed(1);
 plot(t_lin,y_lin,'m');
 %
 grid on;
-title(['krokowo Y1, us = 4, T=' num2str(TH1) ', K=' num2str(KY(1))]);
+title(['krokowo Y1, us = 4, T=' num2str(TH1) ', K=' num2str(KY(1)) ', tau=' num2str(tau1)]);
 
 subplot(2,1,2)
 plot(Y_HIST(:,2));
@@ -230,4 +260,4 @@ y_lin = KY(2)*(1)*(1-exp(1).^(-(t_lin-t_stab_przed)/TH2))+y_stab_przed(2);
 plot(t_lin,y_lin,'m');
 %
 grid on;
-title(['krokowo Y2, us = 4, T=' num2str(TH2) ', K=' num2str(KY(2))]);
+title(['krokowo Y1, us = 4, T=' num2str(TH2) ', K=' num2str(KY(2)) ', tau=' num2str(tau2)]);
