@@ -36,7 +36,7 @@ for i = 1:size(Y,1)-1
         break;
     end
 end
-disp(['Czas ustabilizowania dla us=' num2str(us) ': ' num2str(t_stab)]);
+disp(['Czas ustabilizowania dla us=' num2str(us) ': ' num2str(t_stab) ' na y1=' num2str(Y(ind_stab,1)) ' i na y2=' num2str(Y(ind_stab,2))]);
 
 figure;
 subplot(2,2,1);
@@ -88,7 +88,7 @@ for i = ind_stab:size(Y,1)-1
         break;
     end
 end
-disp(['Czas ustabilizowania po skoku jednostkowym dla us=' num2str(us) ': ' num2str(t_stab_skok)]);
+disp(['Czas ustabilizowania po skoku jednostkowym dla us=' num2str(us) ': ' num2str(t_stab_skok) ' na y1=' num2str(Y(ind_stab,1)) ' i na y2=' num2str(Y(ind_stab,2))]);
 
 T = [0 0];
 %wyznaczenie wzmocnienia, stalej czasowej i opoznienia
@@ -191,7 +191,7 @@ for i = 1:size(Y,1)-1
         break;
     end
 end
-disp(['Czas ustabilizowania dla us=' num2str(us) ': ' num2str(t_stab)]);
+disp(['Czas ustabilizowania dla us=' num2str(us) ': ' num2str(t_stab)  ' na y1=' num2str(Y(ind_stab,1)) ' i na y2=' num2str(Y(ind_stab,2))]);
 
 figure;
 subplot(2,2,1);
@@ -242,7 +242,7 @@ for i = ind_stab:size(Y,1)-1
         break;
     end
 end
-disp(['Czas ustabilizowania po skoku jednostkowym dla us=' num2str(us) ': ' num2str(t_stab_skok)]);
+disp(['Czas ustabilizowania po skoku jednostkowym dla us=' num2str(us) ': ' num2str(t_stab_skok) ' na y1=' num2str(Y(ind_stab,1)) ' i na y2=' num2str(Y(ind_stab,2))]);
 
 T = [0 0];
 %wyznaczenie wzmocnienia, stalej czasowej i opoznienia
