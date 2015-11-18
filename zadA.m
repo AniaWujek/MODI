@@ -145,6 +145,7 @@ y1_model = K(1)*(1)*(1-exp(1).^(-(T_model-t_skoku)/T(1)))+y_stab(1);
 plot(T_model,y1_model,'m');
 xlabel('t');
 ylabel('Y1');
+legend('obiekt','model');
 
 grid on;
 title(['Y1, us = 1.8, T=' num2str(T(1)) ', K=' num2str(K(1)) ', tau=' num2str(tau1)]);
@@ -159,6 +160,7 @@ grid on;
 title(['Y2, us = 1.8, T=' num2str(T(2)) ', K=' num2str(K(2)) ', tau=' num2str(tau2)]);
 xlabel('t');
 ylabel('Y2');
+legend('obiekt','model');
 
 %blad sredniokwadratowy dla Y1
 mse_y1 = mean((Y(ind_stab:end,1) - y1_model).^2);
@@ -301,6 +303,7 @@ grid on;
 title(['Y1, us = 4, T=' num2str(T(1)) ', K=' num2str(K(1)) ', tau=' num2str(tau1)]);
 xlabel('t');
 ylabel('Y1');
+legend('obiekt','model');
 
 subplot(2,1,2)
 plot(TOUT,Y(:,2));
@@ -312,6 +315,7 @@ grid on;
 title(['Y2, us = 4, T=' num2str(T(2)) ', K=' num2str(K(2)) ', tau=' num2str(tau2)]);
 xlabel('t');
 ylabel('Y2');
+legend('obiekt','model');
 
 %blad sredniokwadratowy dla Y1
 mse_y1 = mean((Y(ind_stab:end,1) - y1_model).^2);
